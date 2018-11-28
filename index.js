@@ -1,8 +1,14 @@
 const mongoose = require('mongoose');
+const config = require('config');
 const users = require('./routes/users');
 const auth = require('./routes/auth');
 const express = require('express');
 const app = express();
+
+if(!config.get('jwtPrivateKey')){
+  console.log("ERROR FATAL, NO EXISTE LA VARIABLE PRIVADA DE TOKENS");
+  process.exit(1);
+}
 
 mongoose.connect('mongodb://localhost:27017')
   .then(() => console.log('Connected to MongoDB...'))
