@@ -1,0 +1,23 @@
+version: '2'
+
+services: 
+  users:
+    build:
+      context: .
+    volumes:
+    - ./sapiens:/usr/src/app
+    ports:
+    - 3000:3000
+    environment:
+      jwtPrivateKey: SecureApp
+    depends_on:
+      - mongodb
+  mongodb:
+    command: mongod --smallfiles --logpath=/dev/null
+    container_name: mongodb
+    environment:
+    - MONGO_DATA_DIR=/data/db
+    - MONGO_LOG_DIR=/dev/null
+    image: mongo:latest
+    ports:
+    - 27017:27017
