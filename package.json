@@ -9,11 +9,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "assert": "^1.4.1",
     "bcrypt": "^1.0.3",
+    "bluebird": "^3.5.3",
     "config": "^3.0.0",
     "express": "^4.16.4",
     "joi": "^13.7.0",
     "jsonwebtoken": "^8.4.0",
+    "ldapjs": "^1.0.2",
     "lodash": "^4.17.11",
     "mongoose": "^5.3.14"
   },
