@@ -56,7 +56,7 @@ var service = {
 
 var xml = require('fs').readFileSync('checkUser.wsdl', 'utf8');
 var server = http.createServer(function (request, response) {
-  response.end("404: Not Found: " + request.url);
+  response.end("404: Not Found: " + request.url); 
 });
 server.listen(8001);
 
