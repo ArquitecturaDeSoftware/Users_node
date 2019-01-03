@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="checkUserService" targetNamespace="http://localhost:8001/checkUser" xmlns="http://localhost:8001/checkUser" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <wsdl:message name="checkUserRequest">
+    <wsdl:part name="cedula" type="xs:string"/>
+  </wsdl:message>
+
+  <wsdl:message name="checkUserResponse">
+    <wsdl:part name="cedula" type="xs:string"/>
+    <wsdl:part name="name" type="xs:string"/>
+    <wsdl:part name="lunchroom_id" type="xs:string"/>
+    <wsdl:part name="active_ticket" type="xs:string"/>
+  </wsdl:message>
+
+  <wsdl:portType name="checkUserPortType">
+    <wsdl:operation name="checkUser">
+      <wsdl:input message="tns:checkUserRequest"/>
+      <wsdl:output message="tns:checkUserResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+
+  <wsdl:binding name="checkUserBinding" type="tns:checkUserPortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="checkUser">
+      <soap:operation soapAction="checkUser"/>
+      <wsdl:input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+
+  <wsdl:service name="checkUserWService">
+    <wsdl:port binding="tns:checkUserBinding" name="checkUserPort">
+      <soap:address location="http://localhost:8001/checkUser"/>
+    </wsdl:port>
+  </wsdl:service>
+
+</wsdl:definitions>

@@ -71,6 +71,7 @@ router.post('/', async (req, res) => {
       if (err) {
         res.send("Primera conexión rechazada");
       } else {
+        
         const { error } = validateAuth(req.body);
         if (error) return res.status(400).send(error.details[0].message);
 
