@@ -19,7 +19,7 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// mongoose.connect('mongodb://mongodb:27017')
+// mongoose.connect('mongodb://10.42.247.25:27017')
 mongoose.connect('mongodb://localhost:27017')
   .then(() => console.log('Connected to MongoDB...'))
   .catch(err => console.error('Could not connect to MongoDB...'));

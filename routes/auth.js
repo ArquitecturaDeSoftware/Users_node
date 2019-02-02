@@ -14,7 +14,7 @@ const Promise = require('bluebird');
 const assert = require('assert');
 
 const ldapOptions = {
-  url: 'ldap://35.231.46.158:389',
+  url: 'ldap://34.73.155.196:389', 
   timeout: 100000,
   connectTimeout: 10000,
   reconnect: true
@@ -82,7 +82,7 @@ router.post('/', async (req, res) => {
         if (!validPassword) return res.status(400).send('Invalid  password.');
 
         ldapClient.bind(
-          "cn=" + user.name + ",ou=academy,dc=arqsoft,dc=unal,dc=edu,dc=co",
+          "cn=" + user.name + ",ou=turnapp,dc=arqsoft,dc=unal,dc=edu,dc=co",
           user.password,
           function (err) {
             if (err) {

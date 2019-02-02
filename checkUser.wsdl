@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="checkUserService" targetNamespace="http://localhost:8001/checkUser" xmlns="http://localhost:8001/checkUser" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<wsdl:definitions name="checkUserService" targetNamespace="http://34.73.155.196:8001/checkUser" xmlns="http://34.73.155.196:8001/checkUser" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <wsdl:message name="checkUserRequest">
     <wsdl:part name="cedula" type="xs:string"/>
@@ -34,7 +34,7 @@
 
   <wsdl:service name="checkUserWService">
     <wsdl:port binding="tns:checkUserBinding" name="checkUserPort">
-      <soap:address location="http://localhost:8001/checkUser"/>
+      <soap:address location="http://34.73.155.196:8001/checkUser"/>
     </wsdl:port>
   </wsdl:service>
 
